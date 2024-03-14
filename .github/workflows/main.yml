@@ -1,0 +1,14 @@
+name: sample workflow
+on: push
+jobs: 
+  myjob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: curl the txt file and output
+        runs: curl https://www.digitalocean.com/robots.txt. --output robots.txt
+      - name: ls command
+        runs: ls -a
+      - name: cat the robots.txt
+        run: cat robots.txt
